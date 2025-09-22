@@ -2,25 +2,25 @@
 
 ## 📊 Progress Overview
 
-- **Total Problems Solved**: 0
-- **Last Updated**: {{ site.time | date: "%Y-%m-%d" }}
+- **Total Problems Solved**: 1
+- **Last Updated**: 2025-09-22
 
 ## 📈 Statistics
 
 ### By Difficulty
-- **Easy**: 0 problems
+- **Easy**: 1 problems
 - **Medium**: 0 problems
 - **Hard**: 0 problems
 
 ### By Language
-- **Java**: 0 problems
+- **Java**: 1 problems
 - **Python**: 0 problems
 
 ## 📝 Recent Solutions
 
 | # | Problem | Difficulty | Java | Python | Date |
 |---|---------|------------|------|--------|------|
-| - | No problems solved yet | - | - | - | - |
+| 0001 | Two Sum | Easy | ✅ | ❌ | 2025-09-22 |
 
 ## 🎯 Goals
 
