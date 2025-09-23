@@ -79,7 +79,7 @@ def test_two_sum(self, name, nums, target, expected):
 
 ## 📊 Progress Tracking
 
-Visit the [GitHub Pages site](docs/index.md) to see:
+Visit the [GitHub Pages site](https://sahishnuk2.github.io/leetcode/) to see:
 - Total problems solved
 - Progress by difficulty and language
 - Recent solutions
