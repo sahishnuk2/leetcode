@@ -90,30 +90,14 @@ def get_problem_info(problem_dir):
     if not has_java and not has_python:
         return None
 
-    # Determine difficulty (you can enhance this by reading problem metadata)
-    difficulty = get_difficulty_from_number(number)
-
     return {
         'number': number,
         'title': title,
-        'difficulty': difficulty,
         'has_java': has_java,
-        'has_python': has_python,
-        'date': datetime.now().strftime('%Y-%m-%d')
+        'has_python': has_python
     }
 
 
-def get_difficulty_from_number(number):
-    """
-    Estimate difficulty based on problem number.
-    This is a rough approximation - you can enhance this with actual LeetCode data.
-    """
-    if number <= 100:
-        return 'Easy' if number % 3 != 0 else 'Medium'
-    elif number <= 500:
-        return 'Medium' if number % 2 == 0 else 'Easy'
-    else:
-        return 'Hard' if number % 4 == 0 else 'Medium'
 
 
 def scan_problems():
@@ -152,12 +136,9 @@ def generate_index_content(problems):
     """Generate the updated index.md content."""
     # Calculate statistics
     total_problems = len(problems)
-
-    difficulty_counts = defaultdict(int)
     language_counts = {'Java': 0, 'Python': 0}
 
     for problem in problems:
-        difficulty_counts[problem['difficulty']] += 1
         if problem['has_java']:
             language_counts['Java'] += 1
         if problem['has_python']:
@@ -176,40 +157,35 @@ def generate_index_content(problems):
 
 ## 📈 Statistics
 
-### By Difficulty
-- **Easy**: {difficulty_counts['Easy']} problems
-- **Medium**: {difficulty_counts['Medium']} problems
-- **Hard**: {difficulty_counts['Hard']} problems
-
 ### By Language
 - **Java**: {language_counts['Java']} problems
 - **Python**: {language_counts['Python']} problems
 
 ## 📝 Recent Solutions
 
-| # | Problem | Difficulty | Java | Python | Date |
-|---|---------|------------|------|--------|------|"""
+| # | Problem | Java | Python |
+|---|---------|------|--------|"""
 
     if not problems:
-        content += "\n| - | No problems solved yet | - | - | - | - |"
+        content += "\n| - | No problems solved yet | - | - |"
     else:
         for problem in problems_sorted[:10]:  # Show latest 10 problems
             java_status = "✅" if problem['has_java'] else "❌"
             python_status = "✅" if problem['has_python'] else "❌"
-            content += f"\n| {problem['number']:04d} | {problem['title']} | {problem['difficulty']} | {java_status} | {python_status} | {problem['date']} |"
+            content += f"\n| {problem['number']:04d} | {problem['title']} | {java_status} | {python_status} |"
 
         if len(problems_sorted) > 10:
-            content += f"\n| ... | {len(problems_sorted) - 10} more problems | ... | ... | ... | ... |"
+            content += f"\n| ... | {len(problems_sorted) - 10} more problems | ... | ... |"
 
     content += """
 
 ## 🎯 Goals
 
-- [ ] Solve 100 Easy problems
-- [ ] Solve 50 Medium problems
-- [ ] Solve 10 Hard problems
+- [ ] Solve 100 problems
 - [ ] Master all array problems
 - [ ] Master all tree problems
+- [ ] Master all dynamic programming problems
+- [ ] Master all graph problems
 
 ---
 
