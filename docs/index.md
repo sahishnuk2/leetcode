@@ -2,19 +2,20 @@
 
 ## 📊 Progress Overview
 
-- **Total Problems Solved**: 1
-- **Last Updated**: 2025-09-22
+- **Total Problems Solved**: 2
+- **Last Updated**: 2025-09-23
 
 ## 📈 Statistics
 
 ### By Language
-- **Java**: 1 problems
+- **Java**: 2 problems
 - **Python**: 0 problems
 
 ## 📝 Recent Solutions
 
 | # | Problem | Java | Python |
 |---|---------|------|--------|
+| 0165 | Compare Version Numbers | ✅ | ❌ |
 | 0001 | Two Sum | ✅ | ❌ |
 
 ## 🎯 Goals
